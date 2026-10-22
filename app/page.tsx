@@ -24,8 +24,21 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <Section className="pt-10 md:pt-16">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+      <Section className="relative overflow-hidden pt-10 md:pt-16">
+        <svg
+          className="pointer-events-none absolute -left-10 bottom-0 h-40 w-40 text-accent/25 md:h-56 md:w-56"
+          viewBox="0 0 200 200"
+          fill="none"
+          aria-hidden
+        >
+          <path
+            d="M0 160C40 160 60 120 60 80C60 40 90 10 140 10"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+        </svg>
+
+        <div className="relative grid items-center gap-10 md:grid-cols-2">
           <div>
             <p className="text-sm font-medium text-muted">{hero.label}</p>
             <h1 className="mt-4 font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] text-text">
@@ -56,7 +69,10 @@ export default function Home() {
             </div>
           </div>
           <div className="relative order-first md:order-last">
-            <div className="glow -right-10 -top-10 h-64 w-64" aria-hidden />
+            <div
+              className="glow left-1/2 top-1/2 h-[420px] w-[420px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
+              aria-hidden
+            />
             {site.photo.startsWith("[") ? (
               <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (

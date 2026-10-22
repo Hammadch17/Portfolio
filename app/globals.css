@@ -27,7 +27,19 @@
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(
+      ellipse 900px 650px at 88% -5%,
+      color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 800px 600px at -5% 55%,
+      color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+      transparent 60%
+    ),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body), system-ui, sans-serif;
 }
@@ -76,9 +88,9 @@ h3 {
   border-radius: 9999px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--accent) 35%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 45%, transparent) 0%,
     transparent 70%
   );
-  filter: blur(48px);
+  filter: blur(60px);
   pointer-events: none;
 }
