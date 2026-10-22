@@ -105,7 +105,7 @@ h3 {
 }
 
 .marquee-track {
-  animation: marquee 70s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .marquee-group:hover .marquee-track,
