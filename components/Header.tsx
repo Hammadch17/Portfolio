@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { site } from "@/data/site";
 
 const navLinks = [
+  { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/how-i-work", label: "How I Work" },
   ...(site.showContent ? [{ href: "/content", label: "Content" }] : []),

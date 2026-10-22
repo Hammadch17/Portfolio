@@ -42,7 +42,11 @@ export default function Home() {
           <div>
             <p className="text-sm font-medium text-muted">{hero.label}</p>
             <h1 className="mt-4 font-heading text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[1.1] text-text">
-              {hero.h1}
+              {hero.h1Lines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted">
               {hero.subhead}
@@ -70,19 +74,26 @@ export default function Home() {
           </div>
           <div className="relative order-first md:order-last">
             <div
-              className="glow left-1/2 top-1/2 h-[420px] w-[420px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
+              className="glow left-1/2 top-1/2 h-[460px] w-[460px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
               aria-hidden
             />
             {site.photo.startsWith("[") ? (
-              <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
+              <div className="relative aspect-[3/4] w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
-              <div className="group relative aspect-[4/3] w-full max-w-md overflow-hidden rounded-[12px] md:ml-auto">
+              <div className="group relative aspect-[3/4] w-full max-w-sm md:ml-auto">
                 <Image
                   src={site.photo}
                   alt={site.fullName}
                   fill
-                  sizes="(min-width: 768px) 448px, 90vw"
+                  quality={90}
+                  sizes="(min-width: 768px) 384px, 90vw"
                   className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                  style={{
+                    maskImage:
+                      "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
+                    WebkitMaskImage:
+                      "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
+                  }}
                 />
               </div>
             )}

@@ -1,6 +1,6 @@
 # Hammad Ahmad — Portfolio
 
-A five-page personal portfolio built with Next.js (App Router), TypeScript, and Tailwind CSS, per `PRD.md`. The goal of every page is one primary action: **Book a call**.
+A personal portfolio built with Next.js (App Router), TypeScript, and Tailwind CSS, based on `PRD.md` (Home, Work, How I Work, Content, Contact) plus an About page Hammad asked to add afterward. The goal of every page is one primary action: **Book a call**.
 
 ## Running locally
 
