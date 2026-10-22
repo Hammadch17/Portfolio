@@ -22,7 +22,7 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold leading-none transition-colors duration-150 ease-out disabled:opacity-60 disabled:cursor-not-allowed";
 
 const variants = {
-  primary: "bg-accent text-accent-text hover:bg-accent-hover",
+  primary: "bg-accent text-accent-text hover:bg-white hover:text-bg",
   secondary:
     "bg-transparent text-text border border-border hover:border-text",
 };
