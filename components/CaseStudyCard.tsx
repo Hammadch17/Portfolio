@@ -5,7 +5,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <Link
       href={`/work/${caseStudy.slug}`}
-      className="group block rounded-xl border border-border bg-surface p-6 transition-all duration-150 ease-out hover:border-text hover:-translate-y-0.5"
+      className="group block rounded-xl border border-border bg-surface p-6 transition-all duration-150 ease-out hover:border-accent hover:-translate-y-0.5"
     >
       <p className="text-sm text-muted">{caseStudy.industry}</p>
       <h3 className="mt-2 text-xl font-semibold text-text">

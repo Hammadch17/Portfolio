@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #faf8f3;
-  --surface: #ffffff;
-  --text: #141414;
-  --muted: #5c5c57;
-  --border: #e6e2d8;
-  --accent: #b8f34a;
-  --accent-hover: #a6e032;
-  --accent-text: #141414;
-  --green: #1e4d2b;
+  --bg: #0a0d0c;
+  --surface: #121917;
+  --text: #f2f5f3;
+  --muted: #8fa29a;
+  --border: #22302a;
+  --accent: #34d399;
+  --accent-hover: #22b383;
+  --accent-text: #06150e;
+  --green: #5eead4;
 }
 
 @theme inline {
@@ -69,4 +69,16 @@ h3 {
 :focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 2px;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 35%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(48px);
+  pointer-events: none;
 }

@@ -37,7 +37,7 @@ export default function ContentPage() {
 
       <Section className="border-t border-border">
         <div className="text-center">
-          <Button href="/contact#book">Book a call</Button>
+          <Button href="/contact#book" withArrow>Book a call</Button>
         </div>
       </Section>
     </>

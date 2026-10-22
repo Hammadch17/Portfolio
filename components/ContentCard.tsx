@@ -24,7 +24,7 @@ export function ContentCard({
     <button
       type="button"
       onClick={onOpen}
-      className="group block w-full text-left rounded-xl border border-border bg-surface overflow-hidden transition-all duration-150 ease-out hover:border-text hover:-translate-y-0.5"
+      className="group block w-full text-left rounded-xl border border-border bg-surface overflow-hidden transition-all duration-150 ease-out hover:border-accent hover:-translate-y-0.5"
     >
       <div className="relative aspect-square bg-bg">
         <Image

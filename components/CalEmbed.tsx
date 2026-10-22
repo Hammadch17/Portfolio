@@ -23,8 +23,8 @@ export function CalEmbed() {
         const cal = await getCalApi();
         if (cancelled) return;
         cal("ui", {
-          theme: "light",
-          styles: { branding: { brandColor: "#141414" } },
+          theme: "dark",
+          styles: { branding: { brandColor: "#34d399" } },
         });
         setReady(true);
       } catch {

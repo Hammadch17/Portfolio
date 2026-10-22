@@ -85,7 +85,7 @@ export function ContactForm() {
           className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
         />
         {errors.name && (
-          <p id="name-error" className="mt-1 text-sm text-red-700">
+          <p id="name-error" className="mt-1 text-sm text-red-400">
             {errors.name}
           </p>
         )}
@@ -105,7 +105,7 @@ export function ContactForm() {
           className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
         />
         {errors.email && (
-          <p id="email-error" className="mt-1 text-sm text-red-700">
+          <p id="email-error" className="mt-1 text-sm text-red-400">
             {errors.email}
           </p>
         )}
@@ -127,7 +127,7 @@ export function ContactForm() {
           className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
         />
         {errors.company && (
-          <p id="company-error" className="mt-1 text-sm text-red-700">
+          <p id="company-error" className="mt-1 text-sm text-red-400">
             {errors.company}
           </p>
         )}
@@ -152,7 +152,7 @@ export function ContactForm() {
           className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
         />
         {errors.message && (
-          <p id="message-error" className="mt-1 text-sm text-red-700">
+          <p id="message-error" className="mt-1 text-sm text-red-400">
             {errors.message}
           </p>
         )}
@@ -178,7 +178,7 @@ export function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-700">
+        <p role="alert" className="text-sm text-red-400">
           Something went wrong. Email me at{" "}
           <a href={`mailto:${site.email}`} className="underline">
             {site.email}

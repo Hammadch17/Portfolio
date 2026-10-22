@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Users, Search, TrendingUp, Globe, Building2 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
@@ -7,6 +8,9 @@ import { site, hero, proofStrip, whatIDo, about } from "@/data/site";
 import { getFeaturedCaseStudies } from "@/data/caseStudies";
 import { process } from "@/data/process";
 import { personJsonLd } from "@/lib/seo";
+
+const whatIDoIcons = [Users, Search, TrendingUp];
+const proofStripIcons = [Users, Globe, Building2];
 
 export default function Home() {
   const featured = getFeaturedCaseStudies();
@@ -31,22 +35,37 @@ export default function Home() {
               {hero.subhead}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact#book">Book a 20 minute call</Button>
+              <Button href="/contact#book" withArrow>
+                Book a 20 minute call
+              </Button>
               <Button href="/work" variant="secondary">
                 See my work
               </Button>
             </div>
+
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
+              {whatIDo.map((item, i) => {
+                const Icon = whatIDoIcons[i];
+                return (
+                  <div key={item.title} className="flex items-center gap-2">
+                    <Icon size={18} className="text-accent" aria-hidden />
+                    <span className="text-sm text-muted">{item.title}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className="order-first md:order-last">
+          <div className="relative order-first md:order-last">
+            <div className="glow -right-10 -top-10 h-64 w-64" aria-hidden />
             {site.photo.startsWith("[") ? (
-              <div className="aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
+              <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
               <Image
                 src={site.photo}
                 alt={site.fullName}
                 width={480}
                 height={480}
-                className="aspect-square w-full max-w-sm rounded-[12px] object-cover md:ml-auto"
+                className="relative aspect-square w-full max-w-sm rounded-[12px] object-cover md:ml-auto"
               />
             )}
           </div>
@@ -55,15 +74,21 @@ export default function Home() {
 
       {/* Proof strip */}
       <Section className="py-10 md:py-14">
-        <div className="grid gap-8 border-y border-border py-10 md:grid-cols-3">
-          {proofStrip.map((item) => (
-            <div key={item.caption}>
-              <p className="font-heading text-xl font-semibold text-text">
-                {item.fact}
-              </p>
-              <p className="mt-2 text-sm text-muted">{item.caption}</p>
-            </div>
-          ))}
+        <div className="grid gap-8 rounded-xl border border-border bg-surface p-8 md:grid-cols-3">
+          {proofStrip.map((item, i) => {
+            const Icon = proofStripIcons[i];
+            return (
+              <div key={item.caption} className="flex items-start gap-4">
+                <Icon size={24} className="mt-1 shrink-0 text-accent" aria-hidden />
+                <div>
+                  <p className="font-heading text-xl font-semibold text-text">
+                    {item.fact}
+                  </p>
+                  <p className="mt-2 text-sm text-muted">{item.caption}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
@@ -73,17 +98,23 @@ export default function Home() {
           What I do
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {whatIDo.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-surface p-6"
-            >
-              <h3 className="text-lg font-semibold text-text">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-base text-muted">{item.text}</p>
-            </div>
-          ))}
+          {whatIDo.map((item, i) => {
+            const Icon = whatIDoIcons[i];
+            return (
+              <div
+                key={item.title}
+                className="rounded-xl border border-border bg-surface p-6 transition-all duration-150 ease-out hover:border-accent hover:-translate-y-0.5"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-bg">
+                  <Icon size={20} className="text-accent" aria-hidden />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-text">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-base text-muted">{item.text}</p>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
@@ -145,7 +176,7 @@ export default function Home() {
             Book a 20 minute call and tell me what you are working on.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="/contact#book">Book a call</Button>
+            <Button href="/contact#book" withArrow>Book a call</Button>
           </div>
         </div>
       </Section>

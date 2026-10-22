@@ -40,7 +40,7 @@ export default function WorkPage() {
             Want results like these for your business?
           </h2>
           <div className="mt-8 flex justify-center">
-            <Button href="/contact#book">Book a call</Button>
+            <Button href="/contact#book" withArrow>Book a call</Button>
           </div>
         </div>
       </Section>
