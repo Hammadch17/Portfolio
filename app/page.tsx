@@ -1,16 +1,16 @@
 import Image from "next/image";
-import { Users, Search, TrendingUp, Globe, Building2 } from "lucide-react";
+import { Users, Search, TrendingUp } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { ProcessStep } from "@/components/ProcessStep";
-import { site, hero, proofStrip, whatIDo, about } from "@/data/site";
-import { getFeaturedCaseStudies } from "@/data/caseStudies";
+import { ProjectMarquee } from "@/components/ProjectMarquee";
+import { site, hero, whatIDo, about } from "@/data/site";
+import { caseStudies, getFeaturedCaseStudies } from "@/data/caseStudies";
 import { process } from "@/data/process";
 import { personJsonLd } from "@/lib/seo";
 
 const whatIDoIcons = [Users, Search, TrendingUp];
-const proofStripIcons = [Users, Globe, Building2];
 
 export default function Home() {
   const featured = getFeaturedCaseStudies();
@@ -101,24 +101,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Proof strip */}
+      {/* Project marquee */}
       <Section className="py-10 md:py-14">
-        <div className="grid gap-8 rounded-xl border border-border bg-surface p-8 md:grid-cols-3">
-          {proofStrip.map((item, i) => {
-            const Icon = proofStripIcons[i];
-            return (
-              <div key={item.caption} className="flex items-start gap-4">
-                <Icon size={24} className="mt-1 shrink-0 text-accent" aria-hidden />
-                <div>
-                  <p className="font-heading text-xl font-semibold text-text">
-                    {item.fact}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">{item.caption}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <p className="mb-6 font-heading text-xl font-semibold text-text md:text-2xl">
+          Projects I&apos;ve worked on
+        </p>
+        <ProjectMarquee caseStudies={caseStudies} />
       </Section>
 
       {/* What I do */}
