@@ -10,6 +10,8 @@ export type CaseStudy = {
   myRole: string;
   result?: string;
   coverImage?: string;
+  /** Only set for non-confidential personal/free projects Hammad has cleared to name and link. */
+  liveUrl?: string;
   featured: boolean;
   order: number;
 };
@@ -86,6 +88,48 @@ export const caseStudies: CaseStudy[] = [
     myRole: "I ran the SEO campaign personally. [ROLE DETAIL IF NEEDED]",
     featured: false,
     order: 5,
+  },
+  {
+    slug: "vova",
+    title: "VOVA",
+    clientDescriptor: "Personal project, built for free",
+    industry: "[CONFIRM INDUSTRY]",
+    region: "[CONFIRM REGION]",
+    services: ["[CONFIRM SERVICES]"],
+    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
+    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
+    myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
+    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
+    featured: false,
+    order: 6,
+  },
+  {
+    slug: "hindi-audiobooks-site",
+    title: "Free Hindi Audiobooks Site",
+    clientDescriptor: "Personal project, built for free",
+    industry: "Audio content and publishing",
+    region: "[CONFIRM REGION]",
+    services: ["[CONFIRM SERVICES]"],
+    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
+    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
+    myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
+    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
+    featured: false,
+    order: 7,
+  },
+  {
+    slug: "behind-the-grill",
+    title: "Behind The Grill",
+    clientDescriptor: "Personal project, built for free",
+    industry: "[CONFIRM INDUSTRY]",
+    region: "[CONFIRM REGION]",
+    services: ["[CONFIRM SERVICES]"],
+    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
+    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
+    myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
+    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
+    featured: false,
+    order: 8,
   },
 ];
 

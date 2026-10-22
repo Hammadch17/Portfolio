@@ -8,7 +8,7 @@ export const site = {
   replyTime: "within one day",
   workingHours: "[WORKING HOURS]",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "[CAL.COM EVENT PATH]",
-  photo: "[PHOTO]",
+  photo: "/images/hammad-photo.webp",
   showContent: false,
   slogan: "Right buyers. Real conversations.",
 };

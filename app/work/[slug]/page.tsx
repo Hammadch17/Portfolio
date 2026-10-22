@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import {
@@ -88,6 +88,16 @@ export default async function CaseStudyPage({
                 </li>
               ))}
             </ul>
+          )}
+          {caseStudy.liveUrl && (
+            <a
+              href={caseStudy.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green hover:underline"
+            >
+              Visit the live site <ExternalLink size={16} aria-hidden />
+            </a>
           )}
         </div>
 

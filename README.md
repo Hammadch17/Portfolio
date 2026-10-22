@@ -18,7 +18,7 @@ All copy lives in typed files under `data/`, not inside components. To change te
 | File | Controls |
 | --- | --- |
 | `data/site.ts` | Name, email, LinkedIn, working hours, hero copy, proof strip, "What I do" cards, About paragraphs, the `showContent` flag |
-| `data/caseStudies.ts` | The 5 Work case studies (title, problem, what was built, role, optional result) |
+| `data/caseStudies.ts` | The Work case studies (title, problem, what was built, role, optional result). Entries for the 5 confidential paid clients never get a real name, logo, or `liveUrl`; entries for free/personal projects (VOVA, the Hindi audiobooks site, Behind The Grill) may use the real name and an optional `liveUrl` since Hammad has cleared those to be shown openly |
 | `data/process.ts` | The 4 "How I Work" steps (also used as the Home page teaser) |
 | `data/contentPieces.ts` | The 6 Content gallery pieces (only shown once `showContent` is `true`) |
 
@@ -30,7 +30,11 @@ The Content page is built but hidden in version 1 (`showContent: false` in `data
 
 ### Case study images
 
-Case studies render a plain typographic panel unless a `coverImage` path is set. Never upload a real client screenshot — only a generic panel or a redrawn/anonymized layout, per the confidentiality rule in `PRD.md`.
+Case studies render a plain typographic panel unless a `coverImage` path is set. For the 5 confidential clients, never upload a real screenshot — only a generic panel or a redrawn/anonymized layout, per the confidentiality rule in `PRD.md`. A real screenshot is fine for the free/personal projects that are already named.
+
+### Hero photo
+
+`data/site.ts`'s `photo` field points at `public/images/hammad-photo.webp`. Swap the file (keep it roughly square) and the path stays the same, or point `photo` at a new path.
 
 ## Environment variables
 
