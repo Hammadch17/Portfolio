@@ -76,12 +76,12 @@ export default function Home() {
             {site.photo.startsWith("[") ? (
               <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
-              <div className="group relative aspect-square w-full max-w-sm overflow-hidden rounded-[12px] border border-border transition-colors duration-200 ease-out hover:border-accent md:ml-auto">
+              <div className="group relative aspect-[4/3] w-full max-w-md overflow-hidden rounded-[12px] border border-border transition-colors duration-200 ease-out hover:border-accent md:ml-auto">
                 <Image
                   src={site.photo}
                   alt={site.fullName}
                   fill
-                  sizes="(min-width: 768px) 384px, 90vw"
+                  sizes="(min-width: 768px) 448px, 90vw"
                   className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
