@@ -89,15 +89,31 @@ export default async function CaseStudyPage({
               ))}
             </ul>
           )}
-          {caseStudy.liveUrl && (
-            <a
-              href={caseStudy.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green hover:underline"
-            >
-              Visit the live site <ExternalLink size={16} aria-hidden />
-            </a>
+          {(caseStudy.liveUrl || caseStudy.otherUrls) && (
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+              {caseStudy.liveUrl && (
+                <a
+                  href={caseStudy.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-green hover:underline"
+                >
+                  Visit the live site <ExternalLink size={16} aria-hidden />
+                </a>
+              )}
+              {caseStudy.otherUrls?.map((url) => (
+                <a
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-green hover:underline"
+                >
+                  {url.replace(/^https?:\/\//, "")}{" "}
+                  <ExternalLink size={14} aria-hidden />
+                </a>
+              ))}
+            </div>
           )}
         </div>
 

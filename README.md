@@ -18,7 +18,7 @@ All copy lives in typed files under `data/`, not inside components. To change te
 | File | Controls |
 | --- | --- |
 | `data/site.ts` | Name, email, LinkedIn, working hours, hero copy, proof strip, "What I do" cards, About paragraphs, the `showContent` flag |
-| `data/caseStudies.ts` | The Work case studies (title, problem, what was built, role, optional result). Entries for the 5 confidential paid clients never get a real name, logo, or `liveUrl`; entries for free/personal projects (VOVA, the Hindi audiobooks site, Behind The Grill) may use the real name and an optional `liveUrl` since Hammad has cleared those to be shown openly |
+| `data/caseStudies.ts` | The 5 Work case studies (Shahzaib Electronics, Mukham Construction, Vova Even, Free Hindi Audiobooks, Behind The Grill) — title, problem, what was built, role, optional result, `liveUrl`, and `otherUrls` for a project with multiple regional domains. Hammad has cleared all 5 to be shown with their real names and links |
 | `data/process.ts` | The 4 "How I Work" steps (also used as the Home page teaser) |
 | `data/contentPieces.ts` | The 6 Content gallery pieces (only shown once `showContent` is `true`) |
 
@@ -30,7 +30,7 @@ The Content page is built but hidden in version 1 (`showContent: false` in `data
 
 ### Case study images
 
-Case studies render a plain typographic panel unless a `coverImage` path is set. For the 5 confidential clients, never upload a real screenshot — only a generic panel or a redrawn/anonymized layout, per the confidentiality rule in `PRD.md`. A real screenshot is fine for the free/personal projects that are already named.
+Case studies render a plain typographic panel unless a `coverImage` path is set. A real screenshot is fine here since all 5 current projects are named with Hammad's permission — add one to `public/` and set `coverImage` on the matching entry whenever he wants.
 
 ### Hero photo
 
@@ -72,4 +72,4 @@ Without `RESEND_API_KEY` / `CONTACT_TO_EMAIL` / `CONTACT_FROM_EMAIL` set, the co
 
 Five pages (Home, Work, How I Work, Content, Contact), one case study template, a Cal.com booking embed with a fallback link, a contact form backed by `/api/contact` (zod validation, honeypot, a 5-per-hour-per-IP in-memory rate limit, Resend delivery), SEO basics (metadata, sitemap, robots, a generated OG image, Person JSON-LD on Home), and accessibility basics (skip link, visible focus, keyboard-operable menu and lightbox, `prefers-reduced-motion` support).
 
-No client name, logo, URL or identifying screenshot appears anywhere on the site — every case study is anonymized per `PRD.md`.
+Note: `PRD.md` originally required every case study to stay anonymized (no real client names, logos, or links). Hammad has since cleared all 5 current projects to be shown by name with live links — this supersedes that section of the PRD for those 5 entries. Keep that rule in mind if more confidential (unnamed) client work gets added later.

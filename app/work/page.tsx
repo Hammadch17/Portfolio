@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Work | Hammad Ahmad",
-  description: "Selected client work, anonymized to protect confidentiality.",
+  description: "Selected projects I've helped bring to market.",
   path: "/work",
 });
 
@@ -21,8 +21,8 @@ export default function WorkPage() {
           Work
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted">
-          Selected client work. Every client is confidential, so each case
-          study is anonymized: no names, no logos, no links.
+          A selection of projects I&apos;ve found, scoped and managed through
+          our engineering team.
         </p>
       </Section>
 

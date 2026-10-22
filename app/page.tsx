@@ -76,13 +76,15 @@ export default function Home() {
             {site.photo.startsWith("[") ? (
               <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
-              <Image
-                src={site.photo}
-                alt={site.fullName}
-                width={480}
-                height={480}
-                className="relative aspect-square w-full max-w-sm rounded-[12px] object-cover md:ml-auto"
-              />
+              <div className="group relative aspect-square w-full max-w-sm overflow-hidden rounded-[12px] border border-border transition-colors duration-200 ease-out hover:border-accent md:ml-auto">
+                <Image
+                  src={site.photo}
+                  alt={site.fullName}
+                  fill
+                  sizes="(min-width: 768px) 384px, 90vw"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                />
+              </div>
             )}
           </div>
         </div>

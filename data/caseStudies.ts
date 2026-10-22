@@ -10,126 +10,91 @@ export type CaseStudy = {
   myRole: string;
   result?: string;
   coverImage?: string;
-  /** Only set for non-confidential personal/free projects Hammad has cleared to name and link. */
+  /** Real project links Hammad has cleared to show and name openly. */
   liveUrl?: string;
+  /** Additional regional domains for the same project, if any. */
+  otherUrls?: string[];
   featured: boolean;
   order: number;
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "electronics-importer",
-    title: "[CASE STUDY 1 TITLE]",
-    clientDescriptor: "Electronics importer",
-    industry: "Electronics import and retail",
-    region: "Pakistan",
+    slug: "shahzaib-electronics",
+    title: "Shahzaib Electronics",
+    clientDescriptor: "Car accessories retailer",
+    industry: "Car accessories and electronics e-commerce",
+    region: "Lahore, Pakistan",
     services: ["Business development"],
     problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt:
-      "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES. The live site exists but is not linked here.]",
+    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
     myRole:
       "I found the client, handled the deal and managed the relationship with our engineering team. [ROLE DETAIL IF NEEDED]",
+    liveUrl: "https://www.shahzaibelectronics.pk",
     featured: true,
     order: 1,
   },
   {
-    slug: "construction-firm",
-    title: "[CASE STUDY 2 TITLE]",
+    slug: "mukham-construction",
+    title: "Mukham Construction",
     clientDescriptor: "Construction firm",
     industry: "Construction and civil engineering",
     region: "Pakistan",
     services: ["Business development"],
     problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt:
-      "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES. The live site exists but is not linked here.]",
+    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
     myRole:
       "I found the client, handled the deal and managed the relationship with our engineering team. [ROLE DETAIL IF NEEDED]",
+    // liveUrl: "[CONFIRM THE LIVE URL — mmukhamconstruction.com did not resolve when checked]",
     featured: true,
     order: 2,
   },
   {
-    slug: "scotland-business",
-    title: "[CASE STUDY 3 TITLE]",
-    clientDescriptor: "[CONFIRM] business with a WordPress site",
-    industry: "[CONFIRM INDUSTRY]",
-    region: "Scotland, UK",
-    services: ["[CONFIRM SERVICES]"],
-    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt:
-      "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES. The client later removed the site. State this plainly, with no screenshot or link.]",
-    myRole: "[CONFIRM MY ROLE ON THIS ENGAGEMENT]",
-    featured: false,
-    order: 3,
-  },
-  {
-    slug: "electrical-services",
-    title: "[CASE STUDY 4 TITLE]",
-    clientDescriptor: "Electrical services business",
-    industry: "Electrical services",
-    region: "Netherlands",
-    services: ["SEO"],
-    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt:
-      "I ran the SEO campaign personally for 3 months. [WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
-    myRole:
-      "I ran the SEO campaign personally for 3 months. I no longer have account access, so there are no screenshots, rankings, traffic numbers or other figures to show here.",
-    featured: true,
-    order: 4,
-  },
-  {
-    slug: "case-study-5",
-    title: "[CASE STUDY 5 TITLE]",
-    clientDescriptor: "[CONFIRM]",
-    industry: "[CONFIRM]",
-    region: "[CONFIRM]",
-    services: ["SEO"],
-    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
-    myRole: "I ran the SEO campaign personally. [ROLE DETAIL IF NEEDED]",
-    featured: false,
-    order: 5,
-  },
-  {
-    slug: "vova",
-    title: "VOVA",
-    clientDescriptor: "Personal project, built for free",
-    industry: "[CONFIRM INDUSTRY]",
+    slug: "vova-even",
+    title: "Vova Even",
+    clientDescriptor: "Amazon FBA brand",
+    industry: "Amazon FBA tools, courses and seller resources",
     region: "[CONFIRM REGION]",
     services: ["[CONFIRM SERVICES]"],
     problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
     whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
     myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
-    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
-    featured: false,
-    order: 6,
+    liveUrl: "https://vovaeven.com",
+    otherUrls: [
+      "https://vovaeven.co.il",
+      "https://vovseven.net",
+      "https://vovaeven.com.ua",
+    ],
+    featured: true,
+    order: 3,
   },
   {
-    slug: "hindi-audiobooks-site",
-    title: "Free Hindi Audiobooks Site",
-    clientDescriptor: "Personal project, built for free",
+    slug: "free-hindi-audiobooks",
+    title: "Free Hindi Audiobooks",
+    clientDescriptor: "Audiobook platform, by Vova Even",
     industry: "Audio content and publishing",
     region: "[CONFIRM REGION]",
     services: ["[CONFIRM SERVICES]"],
     problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
     whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
     myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
-    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
+    liveUrl: "https://freehindiaudiobooks.com",
     featured: false,
-    order: 7,
+    order: 4,
   },
   {
     slug: "behind-the-grill",
     title: "Behind The Grill",
-    clientDescriptor: "Personal project, built for free",
-    industry: "[CONFIRM INDUSTRY]",
+    clientDescriptor: "BBQ content and Amazon brand",
+    industry: "BBQ content and Amazon e-commerce",
     region: "[CONFIRM REGION]",
     services: ["[CONFIRM SERVICES]"],
     problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
     whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
     myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
-    // liveUrl: "[ADD THE LIVE URL ONCE CONFIRMED]",
+    liveUrl: "https://behindthegrill.com",
     featured: false,
-    order: 8,
+    order: 5,
   },
 ];
 
