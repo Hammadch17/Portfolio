@@ -8,14 +8,14 @@ export const site = {
   replyTime: "within one day",
   workingHours: "[WORKING HOURS]",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "[CAL.COM EVENT PATH]",
-  photo: "/images/hammad-photo.webp",
+  photo: "/images/hammad-photo-v3.webp",
   showContent: false,
   slogan: "Right buyers. Real conversations.",
 };
 
 export const hero = {
   label: site.role,
-  h1: "Right buyers. Real conversations.",
+  h1: "Right buyers. Real conversations.",
   subhead:
     "I bring clients to an engineering team and run SEO campaigns. When a business needs custom software, my team builds it.",
 };

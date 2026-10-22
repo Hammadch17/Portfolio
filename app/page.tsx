@@ -41,7 +41,7 @@ export default function Home() {
         <div className="relative grid items-center gap-10 md:grid-cols-2">
           <div>
             <p className="text-sm font-medium text-muted">{hero.label}</p>
-            <h1 className="mt-4 font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] text-text">
+            <h1 className="mt-4 font-heading text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[1.1] text-text">
               {hero.h1}
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted">
@@ -76,7 +76,7 @@ export default function Home() {
             {site.photo.startsWith("[") ? (
               <div className="relative aspect-square w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
-              <div className="group relative aspect-[4/3] w-full max-w-md overflow-hidden rounded-[12px] border border-border transition-colors duration-200 ease-out hover:border-accent md:ml-auto">
+              <div className="group relative aspect-[4/3] w-full max-w-md overflow-hidden rounded-[12px] md:ml-auto">
                 <Image
                   src={site.photo}
                   alt={site.fullName}
