@@ -3,6 +3,8 @@ export const site = {
   role: "Business Development Executive at Deep Dev Solutions",
   email: "hammadahmadch17@gmail.com",
   linkedinUrl: "https://www.linkedin.com/in/hammad-ahmad-ch/",
+  githubUrl: "https://github.com/Hammadch17",
+  showGithub: true,
   whatsapp: "+92 302 1191771",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hammadahmadch.com",
   deepDevSolutionsUrl: "https://deepdevsolutions.com",
