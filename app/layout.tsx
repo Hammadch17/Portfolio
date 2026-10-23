@@ -22,9 +22,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   ...buildMetadata({
-    title: "Hammad Ahmad | Business Developer at Deep Dev Solutions",
+    title: "Hammad Ahmad | Business Development Executive at Deep Dev Solutions",
     description:
-      "Right buyers, real conversations. Hammad Ahmad is a business developer at Deep Dev Solutions and runs SEO campaigns.",
+      "Right buyers, real conversations. Hammad Ahmad is a Business Development Executive at Deep Dev Solutions and runs SEO campaigns.",
     path: "/",
   }),
 };

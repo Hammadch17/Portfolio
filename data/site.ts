@@ -1,8 +1,9 @@
 export const site = {
   fullName: "Hammad Ahmad",
-  role: "Business Developer at Deep Dev Solutions",
+  role: "Business Development Executive at Deep Dev Solutions",
   email: "hammadahmadch17@gmail.com",
-  linkedinUrl: "[LINKEDIN URL]",
+  linkedinUrl: "https://www.linkedin.com/in/hammad-ahmad-ch/",
+  whatsapp: "+92 302 1191771",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hammadahmadch.com",
   deepDevSolutionsUrl: "https://deepdevsolutions.com",
   replyTime: "within one day",
@@ -53,7 +54,8 @@ export const whatIDo = [
 ];
 
 export const about = [
-  "I'm Hammad Ahmad, a partner and business developer at Deep Dev Solutions, an engineering agency in Lahore. We give businesses in the UK, US and Gulf professional solutions, not just websites — built around what they actually need.",
-  "My job is the part around the build: finding the client, working out what they actually need, and managing the relationship with our engineering team from first call to delivery.",
+  "I'm Hammad Ahmad, a Business Development Executive at Deep Dev Solutions, an engineering agency in Lahore. I'm finishing a BS in Computer Science alongside the role, which helps me bridge business needs and technical solutions rather than just relaying them.",
+  "My job covers lead generation, client acquisition, requirements gathering, proposals and pricing, and coordinating with our development team so a project stays aligned from the first conversation through delivery.",
+  "We work across website and web app development, SaaS platforms, mobile apps, custom software, UI/UX design, SEO and digital marketing, and AI automation and agents. I understand the business first, then recommend what actually fits.",
   "I only say what I can back up. If we are not the right fit, I will tell you on the first call.",
 ];

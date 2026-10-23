@@ -38,7 +38,7 @@ export function personJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.fullName,
-    jobTitle: "Business Developer",
+    jobTitle: "Business Development Executive",
     url: site.siteUrl,
     worksFor: {
       "@type": "Organization",

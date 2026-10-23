@@ -11,7 +11,7 @@ const whatIDoIcons = [Users, Search, TrendingUp];
 export const metadata: Metadata = buildMetadata({
   title: "About | Hammad Ahmad",
   description:
-    "Hammad Ahmad is a partner and business developer at Deep Dev Solutions.",
+    "Hammad Ahmad is a Business Development Executive at Deep Dev Solutions.",
   path: "/about",
 });
 

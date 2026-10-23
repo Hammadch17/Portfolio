@@ -60,6 +60,14 @@ export default function ContactPage() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href={`https://wa.me/${site.whatsapp.replace(/[^\d]/g, "")}`}
+                  className="text-green underline-offset-4 hover:underline"
+                >
+                  WhatsApp: {site.whatsapp}
+                </a>
+              </li>
               <li>Lahore, Pakistan</li>
               <li>{site.workingHours}</li>
             </ul>
