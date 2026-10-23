@@ -24,7 +24,7 @@ export const hero = {
 
 export const proofStrip = [
   {
-    fact: "[5 client engagements]",
+    fact: "7 live websites",
     caption: "across business development, web and SEO",
   },
   {

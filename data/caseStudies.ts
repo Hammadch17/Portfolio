@@ -92,20 +92,6 @@ export const caseStudies: CaseStudy[] = [
     order: 5,
   },
   {
-    slug: "vova-even-il",
-    title: "Vova Even (Hebrew)",
-    clientDescriptor: "Amazon FBA brand — Hebrew-language site",
-    industry: "Amazon FBA tools, courses and seller resources",
-    region: "Israel",
-    services: ["[CONFIRM SERVICES]"],
-    problem: "[PROBLEM IN 2 TO 3 SENTENCES]",
-    whatWeBuilt: "[WHAT WE BUILT OR RAN IN 2 TO 3 SENTENCES]",
-    myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
-    liveUrl: "https://vovaeven.co.il",
-    featured: false,
-    order: 6,
-  },
-  {
     slug: "free-hindi-audiobooks",
     title: "Free Hindi Audiobooks",
     clientDescriptor: "Audiobook platform, by Vova Even",
@@ -117,7 +103,7 @@ export const caseStudies: CaseStudy[] = [
     myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
     liveUrl: "https://freehindiaudiobooks.com",
     featured: false,
-    order: 7,
+    order: 6,
   },
   {
     slug: "behind-the-grill",
@@ -131,7 +117,7 @@ export const caseStudies: CaseStudy[] = [
     myRole: "[CONFIRM MY ROLE ON THIS PROJECT]",
     liveUrl: "https://behindthegrill.com",
     featured: false,
-    order: 8,
+    order: 7,
   },
 ];
 

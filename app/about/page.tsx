@@ -3,7 +3,15 @@ import Image from "next/image";
 import { Users, Search, TrendingUp } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
+import { JourneyLane } from "@/components/JourneyLane";
 import { site, about, whatIDo } from "@/data/site";
+import {
+  workJourney,
+  educationJourney,
+  journeyIntro,
+  languages,
+  skills,
+} from "@/data/about";
 import { buildMetadata } from "@/lib/seo";
 
 const whatIDoIcons = [Users, Search, TrendingUp];
@@ -50,6 +58,49 @@ export default function AboutPage() {
                 {paragraph}
               </p>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border">
+        <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
+          Journey
+        </h2>
+        <p className="mt-4 text-lg text-muted">{journeyIntro}</p>
+
+        <div className="mt-12 grid gap-12 md:grid-cols-2">
+          <JourneyLane title="Work" entries={workJourney} />
+          <JourneyLane title="Education" entries={educationJourney} />
+        </div>
+
+        <div className="mt-16 grid gap-10 sm:grid-cols-2">
+          <div>
+            <h3 className="font-heading text-xl font-semibold text-text">
+              Languages
+            </h3>
+            <ul className="mt-4 space-y-2 text-base text-muted">
+              {languages.map((lang) => (
+                <li key={lang.name}>
+                  <span className="text-text">{lang.name}</span> —{" "}
+                  {lang.level}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-heading text-xl font-semibold text-text">
+              Skills
+            </h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <li
+                  key={skill}
+                  className="rounded-full border border-border px-4 py-1.5 text-sm text-text"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </Section>
