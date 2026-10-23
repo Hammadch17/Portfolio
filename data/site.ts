@@ -8,7 +8,8 @@ export const site = {
   replyTime: "within one day",
   workingHours: "[WORKING HOURS]",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "[CAL.COM EVENT PATH]",
-  photo: "/images/hammad-photo-v4.webp",
+  photo: "/images/hammad-photo.webp",
+  secondaryPhoto: "/images/hammad-photo-oval.webp",
   showContent: false,
   slogan: "Right buyers. Real conversations.",
 };
@@ -52,7 +53,7 @@ export const whatIDo = [
 ];
 
 export const about = [
-  "I'm Hammad Ahmad, a partner and business developer at Deep Dev Solutions, an engineering agency in Lahore that builds websites, business systems and automation for companies in the UK, US and Gulf.",
+  "I'm Hammad Ahmad, a partner and business developer at Deep Dev Solutions, an engineering agency in Lahore. We give businesses in the UK, US and Gulf professional solutions, not just websites — built around what they actually need.",
   "My job is the part around the build: finding the client, working out what they actually need, and managing the relationship with our engineering team from first call to delivery.",
   "I only say what I can back up. If we are not the right fit, I will tell you on the first call.",
 ];

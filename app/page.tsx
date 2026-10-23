@@ -87,13 +87,7 @@ export default function Home() {
                   fill
                   quality={90}
                   sizes="(min-width: 768px) 384px, 90vw"
-                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                  style={{
-                    maskImage:
-                      "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
-                    WebkitMaskImage:
-                      "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
-                  }}
+                  className="object-contain object-bottom transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
             )}
@@ -171,15 +165,28 @@ export default function Home() {
 
       {/* About */}
       <Section>
-        <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
-          About me
-        </h2>
-        <div className="mt-8 max-w-2xl space-y-5">
-          {about.map((paragraph) => (
-            <p key={paragraph} className="text-lg text-muted">
-              {paragraph}
-            </p>
-          ))}
+        <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
+          <div className="relative mx-auto h-40 w-32 overflow-hidden rounded-[50%] border border-border md:mx-0 md:h-48 md:w-36">
+            <Image
+              src={site.secondaryPhoto}
+              alt={site.fullName}
+              fill
+              sizes="144px"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
+              About me
+            </h2>
+            <div className="mt-8 max-w-2xl space-y-5">
+              {about.map((paragraph) => (
+                <p key={paragraph} className="text-lg text-muted">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 

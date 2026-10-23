@@ -39,13 +39,7 @@ export default function AboutPage() {
                 fill
                 quality={90}
                 sizes="(min-width: 768px) 384px, 90vw"
-                className="object-cover"
-                style={{
-                  maskImage:
-                    "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse farthest-corner at center, black 55%, transparent 95%)",
-                }}
+                className="object-contain object-bottom"
               />
             </div>
           </div>
