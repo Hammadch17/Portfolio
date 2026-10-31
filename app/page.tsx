@@ -100,12 +100,12 @@ export default function Home() {
                   className="glow left-1/2 top-1/2 h-[380px] w-[380px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
                   aria-hidden
                 />
-                <div className="relative aspect-[1087/1446] w-full">
+                <div className="relative aspect-[1000/1314] w-full">
                   <Image
                     src={site.photo}
                     alt="Hammad Ahmad"
                     width={1000}
-                    height={1331}
+                    height={1314}
                     quality={90}
                     priority
                     sizes="(min-width: 768px) 420px, 90vw"
@@ -188,23 +188,41 @@ export default function Home() {
 
       {/* About */}
       <Section>
-        <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
+        <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
           <div
-            className="photo-frame relative mx-auto h-40 w-32 md:mx-0 md:h-48 md:w-36"
+            className="photo-frame group relative mx-auto w-[280px] md:mx-0 md:w-[360px]"
             tabIndex={0}
           >
             <div
-              className="photo-ring absolute inset-0 overflow-hidden rounded-[50%] border border-border"
-            >
-              <Image
-                src={site.secondaryPhoto}
-                alt="Hammad Ahmad"
-                width={288}
-                height={384}
-                quality={90}
-                sizes="144px"
-                className="photo-img h-full w-full object-cover"
-              />
+              className="glow left-1/2 top-1/2 h-[380px] w-[380px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
+              aria-hidden
+            />
+            <div className="photo-ring relative overflow-hidden rounded-3xl border border-border bg-surface">
+              <div className="relative aspect-[4/5] w-full">
+                <div
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,color-mix(in_srgb,var(--accent)_22%,transparent)_0%,transparent_70%)]"
+                  aria-hidden
+                />
+                <Image
+                  src={site.secondaryPhoto}
+                  alt="Hammad Ahmad"
+                  width={360}
+                  height={450}
+                  quality={90}
+                  sizes="(min-width: 768px) 360px, 280px"
+                  className="photo-img relative h-full w-full object-cover object-top"
+                />
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-surface to-transparent"
+                  aria-hidden
+                />
+              </div>
+              <div className="flex justify-center px-4 pb-4 pt-3">
+                <span className="rounded-full border border-border bg-bg px-4 py-1.5 text-center text-xs text-muted">
+                  <span className="font-medium text-text">Hammad Ahmad</span>{" "}
+                  · {site.role.split(" at ")[0]}
+                </span>
+              </div>
             </div>
           </div>
           <div>

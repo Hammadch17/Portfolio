@@ -9,6 +9,9 @@ import {
   CheckCircle2,
   Target,
   UserCheck,
+  Calendar,
+  Building2,
+  UserRound,
 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
@@ -85,45 +88,82 @@ export default async function CaseStudyPage({
             {caseStudy.subtitle}
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:max-w-xl">
-            <div className="rounded-xl border border-border bg-surface p-4">
-              <p className="text-xs uppercase tracking-wide text-muted">
-                Timeline
-              </p>
-              <p className="mt-1 text-sm font-medium text-text">
-                {caseStudy.timeline}
-              </p>
+          <div className="mt-8 md:flex md:items-start md:gap-6">
+            <div className="relative w-full overflow-hidden rounded-xl border border-border bg-surface md:flex-1">
+              <div
+                className="h-px w-full bg-gradient-to-r from-transparent via-accent to-transparent"
+                aria-hidden
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[minmax(200px,auto)_minmax(280px,auto)_1fr]">
+                {caseStudy.timeline && (
+                  <div className="flex items-center gap-3 border-b border-border p-5 md:border-b-0 md:border-r">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                      <Calendar size={16} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wide text-muted">
+                        Timeline
+                      </p>
+                      <p className="mt-1 text-balance text-[17px] font-medium leading-snug text-text">
+                        {caseStudy.timeline}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {caseStudy.industry && (
+                  <div className="flex items-center gap-3 border-b border-border p-5 lg:border-b-0 lg:border-r">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                      <Building2 size={16} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wide text-muted">
+                        Industry
+                      </p>
+                      <p className="mt-1 text-balance text-[17px] font-medium leading-snug text-text">
+                        {caseStudy.industry}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {caseStudy.role && (
+                  <div className="flex items-center gap-3 p-5 md:col-span-2 lg:col-span-1">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                      <UserRound size={16} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wide text-muted">
+                        My role
+                      </p>
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {caseStudy.roleTags.map((tag) => (
+                          <li
+                            key={tag}
+                            tabIndex={0}
+                            className="hover-chip whitespace-nowrap rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-text"
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
-              <p className="text-xs uppercase tracking-wide text-muted">
-                My role
-              </p>
-              <p className="mt-1 text-sm font-medium text-text">
-                {caseStudy.role}
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
-              <p className="text-xs uppercase tracking-wide text-muted">
-                Industry
-              </p>
-              <p className="mt-1 text-sm font-medium text-text">
-                {caseStudy.industry}
-              </p>
-            </div>
-          </div>
 
-          {caseStudy.liveUrl && (
-            <div className="mt-6">
-              <a
-                href={caseStudy.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-text transition-colors duration-150 ease-out hover:border-text"
-              >
-                Visit live site <ExternalLink size={16} aria-hidden />
-              </a>
-            </div>
-          )}
+            {caseStudy.liveUrl && (
+              <div className="mt-6 md:mt-0 md:shrink-0">
+                <Button
+                  href={caseStudy.liveUrl}
+                  variant="secondary"
+                  withArrow
+                  className="whitespace-nowrap"
+                >
+                  Visit live site
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="relative mt-10">
@@ -152,12 +192,12 @@ export default async function CaseStudyPage({
         </div>
       </Section>
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <p className="max-w-2xl text-lg text-muted">{caseStudy.overview}</p>
       </Section>
 
       {caseStudy.stats.length > 0 && (
-        <Section className="pt-0">
+        <Section className="!pt-0">
           <div className="grid gap-8 rounded-xl border border-border bg-surface p-8 sm:grid-cols-2 lg:grid-cols-4">
             {caseStudy.stats.map((stat) => (
               <div key={stat.label}>
@@ -174,7 +214,7 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <div className="grid gap-10 md:grid-cols-2">
           <div>
             <h2 className="flex items-center gap-2 text-2xl font-semibold text-text">
@@ -207,13 +247,14 @@ export default async function CaseStudyPage({
         </div>
       </Section>
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <h2 className="text-2xl font-semibold text-text">The solution</h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudy.solution.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-border bg-surface p-6"
+              tabIndex={0}
+              className="hover-card rounded-xl border border-border bg-surface p-6"
             >
               <h3 className="text-base font-semibold text-text">
                 {item.title}
@@ -225,7 +266,7 @@ export default async function CaseStudyPage({
       </Section>
 
       {caseStudy.timelineSteps && (
-        <Section className="pt-0">
+        <Section className="!pt-0">
           <h2 className="text-2xl font-semibold text-text">Timeline</h2>
           <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start">
             {caseStudy.timelineSteps.map((step, i) => (
@@ -247,7 +288,7 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <h2 className="text-2xl font-semibold text-text">Results</h2>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {caseStudy.outcomes.map((outcome) => (
@@ -264,7 +305,7 @@ export default async function CaseStudyPage({
       </Section>
 
       {caseStudy.gallery.length > 0 && (
-        <Section className="pt-0">
+        <Section className="!pt-0">
           <h2 className="text-2xl font-semibold text-text">Gallery</h2>
           <div className="mt-6">
             <GalleryLightbox items={caseStudy.gallery} />
@@ -272,7 +313,7 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <h2 className="text-2xl font-semibold text-text">
           Services and technologies
         </h2>
@@ -280,7 +321,8 @@ export default async function CaseStudyPage({
           {caseStudy.services.map((service) => (
             <li
               key={service}
-              className="rounded-full border border-border px-4 py-1.5 text-sm text-text"
+              tabIndex={0}
+              className="hover-chip rounded-full border border-border px-4 py-1.5 text-sm text-text"
             >
               {service}
             </li>
@@ -289,7 +331,7 @@ export default async function CaseStudyPage({
       </Section>
 
       {caseStudy.links && (
-        <Section className="pt-0">
+        <Section className="!pt-0">
           <h2 className="text-2xl font-semibold text-text">Project links</h2>
           <div className="mt-5 divide-y divide-border rounded-xl border border-border">
             {caseStudy.links.map((link) => (
@@ -322,7 +364,7 @@ export default async function CaseStudyPage({
       )}
 
       {caseStudy.quote && (
-        <Section className="pt-0">
+        <Section className="!pt-0">
           <blockquote className="rounded-xl border border-border bg-surface p-8">
             <p className="text-xl font-medium text-text">
               &ldquo;{caseStudy.quote.text}&rdquo;

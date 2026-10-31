@@ -26,28 +26,28 @@ export const metadata: Metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <>
-      <Section className="pt-10 md:pt-16">
+      <Section className="pt-10 md:pt-16 !pb-12">
         <h1 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] text-text">
           About me
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted">{site.role}</p>
+        <p className="mt-3 max-w-2xl text-lg text-muted">{site.role}</p>
       </Section>
 
-      <Section className="pt-0">
+      <Section className="!pt-0">
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div className="relative order-first">
             <div
-              className="glow left-1/2 top-1/2 h-[420px] w-[420px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
+              className="glow left-1/2 top-1/2 h-[460px] w-[460px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
               aria-hidden
             />
-            <div className="photo-frame relative aspect-[4/5] w-full max-w-sm" tabIndex={0}>
+            <div className="photo-frame relative aspect-[4/5] w-full max-w-[460px]" tabIndex={0}>
               <Image
                 src={site.secondaryPhoto}
                 alt="Hammad Ahmad"
-                width={420}
-                height={525}
+                width={460}
+                height={575}
                 quality={90}
-                sizes="(min-width: 768px) 384px, 90vw"
+                sizes="(min-width: 768px) 460px, 90vw"
                 className="photo-img h-full w-full object-cover object-top"
               />
             </div>

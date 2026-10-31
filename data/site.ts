@@ -11,7 +11,7 @@ export const site = {
   replyTime: "within one day",
   workingHours: "[WORKING HOURS]",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "[CAL.COM EVENT PATH]",
-  photo: "/images/hammad-cutout.webp",
+  photo: "/images/hammad-navy-v2.webp",
   secondaryPhoto: "/images/hammad-cutout.webp",
   showContent: false,
   slogan: "Right buyers. Real conversations.",

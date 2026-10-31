@@ -5,6 +5,7 @@ export type CaseStudy = {
   industry: string;
   timeline: string;
   role: string;
+  roleTags: string[];
   liveUrl?: string;
   /** One line shown on the Work page card. */
   cardResult: string;
@@ -34,6 +35,11 @@ export const caseStudies: CaseStudy[] = [
     industry: "Automotive accessories, import and wholesale",
     timeline: "February to March 2026",
     role: "Business Development, Client Acquisition and Social Media Management",
+    roleTags: [
+      "Business Development",
+      "Client Acquisition",
+      "Social Media Management",
+    ],
     liveUrl: "https://shahzaibelectronics.pk",
     cardResult: "63,100 search impressions in 3 months",
     overview:
@@ -127,6 +133,11 @@ export const caseStudies: CaseStudy[] = [
     industry: "Construction",
     timeline: "September 2025",
     role: "Business Development, Requirements Gathering and Client Management",
+    roleTags: [
+      "Business Development",
+      "Requirements Gathering",
+      "Client Management",
+    ],
     liveUrl: "https://mmuhkamconstruction.com",
     cardResult: "From no website to a full corporate portfolio site",
     overview:
@@ -208,6 +219,12 @@ export const caseStudies: CaseStudy[] = [
     industry: "Digital publishing and blogging",
     timeline: "August to October 2026",
     role: "Business Development, Client Communication, Requirements Gathering and Project Management",
+    roleTags: [
+      "Business Development",
+      "Client Communication",
+      "Requirements Gathering",
+      "Project Management",
+    ],
     cardResult: "Blog network rebuilt on Next.js with a CMS the client controls",
     overview:
       "Vova Even Network is a group of content driven blogging websites for different audiences. The client came to us directly to modernize the sites, make them faster and make publishing easier. The team rebuilt the main sites on Next.js, connected them to Sanity CMS and migrated the existing content. I handled the overall client relationship and the project coordination. Behind The Grill and Free Hindi Audiobooks, delivered in the same project, have their own case studies.",
@@ -306,6 +323,21 @@ export const caseStudies: CaseStudy[] = [
         alt: "vovaeven.co.il home page on desktop",
         kind: "desktop",
       },
+      {
+        src: "/work/vova-even-network/desktop-5.webp",
+        alt: "vovaeven.com software page on desktop",
+        kind: "desktop",
+      },
+      {
+        src: "/work/vova-even-network/desktop-6.webp",
+        alt: "vovaeven.com services page on desktop",
+        kind: "desktop",
+      },
+      {
+        src: "/work/vova-even-network/desktop-7.webp",
+        alt: "vovaeven.com blog page on desktop",
+        kind: "desktop",
+      },
     ],
     featured: true,
     order: 3,
@@ -317,6 +349,12 @@ export const caseStudies: CaseStudy[] = [
     industry: "Digital publishing, BBQ and grilling",
     timeline: "August to October 2026",
     role: "Business Development, Client Communication, Requirements Gathering and Project Management",
+    roleTags: [
+      "Business Development",
+      "Client Communication",
+      "Requirements Gathering",
+      "Project Management",
+    ],
     liveUrl: "https://behindthegrill.com",
     cardResult: "Blog migrated to a faster build with a CMS the client controls",
     overview:
@@ -370,10 +408,10 @@ export const caseStudies: CaseStudy[] = [
       "Content and image migration",
       "Project coordination",
     ],
-    cover: "/work/behind-the-grill/hero.webp",
+    cover: "/work/behind-the-grill/cover.webp",
     gallery: [
       {
-        src: "/work/behind-the-grill/desktop-1.webp",
+        src: "/work/behind-the-grill/cover.webp",
         alt: "Behind The Grill home page on desktop",
         kind: "desktop",
       },
@@ -398,6 +436,12 @@ export const caseStudies: CaseStudy[] = [
     industry: "Digital publishing, audiobooks",
     timeline: "August to October 2026",
     role: "Business Development, Client Communication, Requirements Gathering and Project Management",
+    roleTags: [
+      "Business Development",
+      "Client Communication",
+      "Requirements Gathering",
+      "Project Management",
+    ],
     liveUrl: "https://freehindiaudiobooks.com",
     cardResult:
       "Hindi audiobook site migrated to a faster build with a CMS the client controls",

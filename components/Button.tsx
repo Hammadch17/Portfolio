@@ -46,8 +46,13 @@ export function Button(props: LinkProps | NativeButtonProps) {
   );
 
   if (href) {
+    const external = /^https?:\/\//.test(href);
     return (
-      <Link href={href} className={classes}>
+      <Link
+        href={href}
+        className={classes}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {content}
       </Link>
     );

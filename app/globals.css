@@ -160,3 +160,85 @@ h3 {
     transform: none;
   }
 }
+
+/* Hover treatment for solution cards and service chips: transform + opacity only */
+.hover-card,
+.hover-chip {
+  position: relative;
+}
+
+.hover-card::before,
+.hover-chip::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hover-card::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 40%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (hover: hover) {
+  .hover-card,
+  .hover-chip {
+    transition: transform 300ms ease-out;
+  }
+
+  .hover-card::before,
+  .hover-card::after,
+  .hover-chip::before {
+    transition: opacity 300ms ease-out;
+  }
+
+  .hover-card:hover,
+  .hover-card:focus-visible {
+    transform: translateY(-4px);
+  }
+
+  .hover-chip:hover,
+  .hover-chip:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .hover-card:hover::before,
+  .hover-card:focus-visible::before,
+  .hover-card:hover::after,
+  .hover-card:focus-visible::after,
+  .hover-chip:hover::before,
+  .hover-chip:focus-visible::before {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-card,
+  .hover-chip,
+  .hover-card::before,
+  .hover-card::after,
+  .hover-chip::before {
+    transition: none;
+  }
+
+  .hover-card:hover,
+  .hover-card:focus-visible,
+  .hover-chip:hover,
+  .hover-chip:focus-visible {
+    transform: none;
+  }
+}
