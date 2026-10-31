@@ -6,7 +6,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { ProjectMarquee } from "@/components/ProjectMarquee";
 import { site, hero, whatIDo, about } from "@/data/site";
-import { caseStudies, getFeaturedCaseStudies } from "@/data/caseStudies";
+import { projectLinks, getFeaturedCaseStudies } from "@/data/caseStudies";
 import { process } from "@/data/process";
 import { personJsonLd } from "@/lib/seo";
 
@@ -77,18 +77,41 @@ export default function Home() {
               className="glow left-1/2 top-1/2 h-[460px] w-[460px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
               aria-hidden
             />
+            <svg
+              className="pointer-events-none absolute -right-6 top-6 h-32 w-32 text-accent/25"
+              viewBox="0 0 200 200"
+              fill="none"
+              aria-hidden
+            >
+              <path
+                d="M190 10C150 10 130 50 130 90C130 130 100 160 50 160"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
             {site.photo.startsWith("[") ? (
-              <div className="relative aspect-[3/4] w-full max-w-sm rounded-[12px] border border-border bg-surface md:ml-auto" />
+              <div className="relative aspect-[3/4] w-full max-w-[420px] rounded-[12px] border border-border bg-surface md:ml-auto" />
             ) : (
-              <div className="group relative aspect-[3/4] w-full max-w-sm md:ml-auto">
-                <Image
-                  src={site.photo}
-                  alt={site.fullName}
-                  fill
-                  quality={90}
-                  sizes="(min-width: 768px) 384px, 90vw"
-                  className="object-contain object-bottom transition-transform duration-300 ease-out group-hover:scale-105"
+              <div
+                className="photo-frame group relative mx-auto w-full max-w-[420px] md:ml-auto"
+                tabIndex={0}
+              >
+                <div
+                  className="glow left-1/2 top-1/2 h-[380px] w-[380px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
+                  aria-hidden
                 />
+                <div className="relative aspect-[1087/1446] w-full">
+                  <Image
+                    src={site.photo}
+                    alt="Hammad Ahmad"
+                    width={1000}
+                    height={1331}
+                    quality={90}
+                    priority
+                    sizes="(min-width: 768px) 420px, 90vw"
+                    className="photo-img relative h-full w-full object-contain object-bottom"
+                  />
+                </div>
               </div>
             )}
           </div>
@@ -100,7 +123,7 @@ export default function Home() {
         <p className="mb-6 font-heading text-xl font-semibold text-text md:text-2xl">
           Projects I&apos;ve worked on
         </p>
-        <ProjectMarquee caseStudies={caseStudies} />
+        <ProjectMarquee links={projectLinks} />
       </Section>
 
       {/* What I do */}
@@ -166,14 +189,23 @@ export default function Home() {
       {/* About */}
       <Section>
         <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
-          <div className="relative mx-auto h-40 w-32 overflow-hidden rounded-[50%] border border-border md:mx-0 md:h-48 md:w-36">
-            <Image
-              src={site.secondaryPhoto}
-              alt={site.fullName}
-              fill
-              sizes="144px"
-              className="object-cover"
-            />
+          <div
+            className="photo-frame relative mx-auto h-40 w-32 md:mx-0 md:h-48 md:w-36"
+            tabIndex={0}
+          >
+            <div
+              className="photo-ring absolute inset-0 overflow-hidden rounded-[50%] border border-border"
+            >
+              <Image
+                src={site.secondaryPhoto}
+                alt="Hammad Ahmad"
+                width={288}
+                height={384}
+                quality={90}
+                sizes="144px"
+                className="photo-img h-full w-full object-cover"
+              />
+            </div>
           </div>
           <div>
             <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">

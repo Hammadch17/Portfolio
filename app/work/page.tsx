@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Work | Hammad Ahmad",
-  description: "Selected projects I've helped bring to market.",
+  description: "Five client projects I managed from the first conversation to delivery.",
   path: "/work",
 });
 
@@ -21,13 +21,13 @@ export default function WorkPage() {
           Work
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted">
-          A selection of projects I&apos;ve found, scoped and managed through
-          our engineering team.
+          Five client projects I managed from the first conversation to
+          delivery.
         </p>
       </Section>
 
       <Section className="pt-0">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
           ))}

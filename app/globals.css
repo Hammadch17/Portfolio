@@ -113,3 +113,50 @@ h3 {
 .marquee-group:focus-within .marquee-track {
   animation-play-state: paused;
 }
+
+/* Photo hover/focus effect: transform + opacity only, never blur radius */
+.photo-frame .glow {
+  opacity: 0.55;
+}
+
+.photo-frame .photo-img {
+  transition: transform 500ms ease-out;
+}
+
+.photo-frame .photo-ring {
+  transition: border-color 500ms ease-out;
+}
+
+@media (hover: hover) {
+  .photo-frame .glow {
+    transition: opacity 500ms ease-out;
+  }
+
+  .photo-frame:hover .glow,
+  .photo-frame:focus-visible .glow {
+    opacity: 1;
+  }
+
+  .photo-frame:hover .photo-img,
+  .photo-frame:focus-visible .photo-img {
+    transform: scale(1.03);
+  }
+
+  .photo-frame:hover .photo-ring,
+  .photo-frame:focus-visible .photo-ring {
+    border-color: var(--accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame .glow,
+  .photo-frame .photo-img,
+  .photo-frame .photo-ring {
+    transition: none;
+  }
+
+  .photo-frame:hover .photo-img,
+  .photo-frame:focus-visible .photo-img {
+    transform: none;
+  }
+}

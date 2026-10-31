@@ -40,14 +40,15 @@ export default function AboutPage() {
               className="glow left-1/2 top-1/2 h-[420px] w-[420px] max-w-[90vw] -translate-x-1/2 -translate-y-1/2"
               aria-hidden
             />
-            <div className="group relative aspect-[3/4] w-full max-w-sm">
+            <div className="photo-frame relative aspect-[4/5] w-full max-w-sm" tabIndex={0}>
               <Image
-                src={site.photo}
-                alt={site.fullName}
-                fill
+                src={site.secondaryPhoto}
+                alt="Hammad Ahmad"
+                width={420}
+                height={525}
                 quality={90}
                 sizes="(min-width: 768px) 384px, 90vw"
-                className="object-contain object-bottom"
+                className="photo-img h-full w-full object-cover object-top"
               />
             </div>
           </div>
