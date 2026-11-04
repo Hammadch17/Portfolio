@@ -174,9 +174,9 @@ export default function Home() {
         <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
           How I work
         </h2>
-        <div className="mt-10 grid gap-10 md:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {teaserSteps.map((step) => (
-            <ProcessStep key={step.n} step={step} variant="row" />
+            <ProcessStep key={step.n} step={step} variant="list" />
           ))}
         </div>
         <div className="mt-8">

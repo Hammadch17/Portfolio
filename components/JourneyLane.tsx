@@ -17,7 +17,7 @@ export function JourneyLane({
         {entries.map((entry, i) => (
           <ScrollReveal key={entry.title} delay={i * 100}>
             <li>
-              <p className="text-xs font-medium uppercase tracking-wide text-accent">
+              <p className="text-xs font-medium uppercase tracking-wide text-green">
                 {entry.status === "in-progress" && entry.inProgressLabel
                   ? entry.inProgressLabel
                   : entry.dateRange}

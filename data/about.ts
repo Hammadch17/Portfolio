@@ -46,21 +46,20 @@ export const educationJourney: JourneyEntry[] = [
   },
   {
     title: "Web Development Certificate",
-    organization:
-      "Arfa Karim Tower (AKTI), Lahore — [CONFIRM the exact institute name as printed on the certificate]",
+    organization: "Arfa Karim Tower (AKTI), Lahore",
     dateRange: "July to October 2024",
     status: "completed",
   },
   {
     title: "ICS (Computer Science, Physics)",
     organization: "Punjab Group of Colleges",
-    dateRange: "[YEARS]",
+    dateRange: "2021 to 2022",
     status: "completed",
   },
   {
     title: "Matriculation, Computer Science",
     organization: "Moon Public School",
-    dateRange: "[YEAR]",
+    dateRange: "2019 to 2020",
     status: "completed",
   },
 ];

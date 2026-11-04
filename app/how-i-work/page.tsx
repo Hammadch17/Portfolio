@@ -22,10 +22,8 @@ export default function HowIWorkPage() {
         <p className="mt-6 max-w-2xl text-lg text-muted">
           From the first conversation to delivery, I manage the relationship.
         </p>
-      </Section>
 
-      <Section className="pt-0">
-        <div className="max-w-2xl">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 md:mt-12 lg:grid-cols-4">
           {process.map((step) => (
             <ProcessStep key={step.n} step={step} variant="list" />
           ))}

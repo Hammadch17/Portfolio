@@ -24,10 +24,8 @@ export default function WorkPage() {
           Five client projects I managed from the first conversation to
           delivery.
         </p>
-      </Section>
 
-      <Section className="pt-0">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
           ))}
