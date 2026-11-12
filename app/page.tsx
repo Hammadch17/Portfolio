@@ -3,18 +3,17 @@ import { Users, Search, TrendingUp } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
-import { ProcessStep } from "@/components/ProcessStep";
+import { ServiceCard } from "@/components/ServiceCard";
 import { ProjectMarquee } from "@/components/ProjectMarquee";
 import { site, hero, whatIDo, about } from "@/data/site";
 import { projectLinks, getFeaturedCaseStudies } from "@/data/caseStudies";
-import { process } from "@/data/process";
+import { services } from "@/data/services";
 import { personJsonLd } from "@/lib/seo";
 
 const whatIDoIcons = [Users, Search, TrendingUp];
 
 export default function Home() {
   const featured = getFeaturedCaseStudies();
-  const teaserSteps = process.slice(0, 4);
 
   return (
     <>
@@ -169,19 +168,19 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* How I work teaser */}
+      {/* Services */}
       <Section>
         <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
-          How I work
+          Services
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {teaserSteps.map((step) => (
-            <ProcessStep key={step.n} step={step} variant="list" />
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {services.map((service) => (
+            <ServiceCard key={service.slug} service={service} variant="compact" />
           ))}
         </div>
         <div className="mt-8">
-          <Button href="/how-i-work" variant="secondary">
-            See the full process
+          <Button href="/services" variant="secondary">
+            View all services
           </Button>
         </div>
       </Section>

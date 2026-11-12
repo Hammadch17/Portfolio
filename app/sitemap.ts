@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/about",
     "/work",
-    "/how-i-work",
+    "/services",
     ...(site.showContent ? ["/content"] : []),
     "/contact",
   ];

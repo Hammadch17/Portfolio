@@ -10,7 +10,7 @@ import { site } from "@/data/site";
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
-  { href: "/how-i-work", label: "How I Work" },
+  { href: "/services", label: "Services" },
   ...(site.showContent ? [{ href: "/content", label: "Content" }] : []),
   { href: "/contact", label: "Contact" },
 ];
