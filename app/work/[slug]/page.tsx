@@ -80,6 +80,7 @@ export default async function CaseStudyPage({
         <div className="mt-8">
           <p className="text-xs font-medium uppercase tracking-wide text-muted">
             {caseStudy.industry}
+            {caseStudy.location ? ` · ${caseStudy.location}` : ""}
           </p>
           <h1 className="mt-4 font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.05] text-text">
             {caseStudy.title}
@@ -215,21 +216,29 @@ export default async function CaseStudyPage({
       )}
 
       <Section className="!pt-0">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="flex items-center gap-2 text-2xl font-semibold text-text">
-              <Target size={20} className="text-accent" aria-hidden />
-              The challenge
-            </h2>
-            <ul className="mt-5 space-y-3">
-              {caseStudy.challenge.map((item) => (
-                <li key={item} className="flex gap-3 text-base text-muted">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div
+          className={
+            caseStudy.challenge && caseStudy.challenge.length > 0
+              ? "grid gap-10 md:grid-cols-2"
+              : "grid gap-10"
+          }
+        >
+          {caseStudy.challenge && caseStudy.challenge.length > 0 && (
+            <div>
+              <h2 className="flex items-center gap-2 text-2xl font-semibold text-text">
+                <Target size={20} className="text-accent" aria-hidden />
+                The challenge
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {caseStudy.challenge.map((item) => (
+                  <li key={item} className="flex gap-3 text-base text-muted">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div>
             <h2 className="flex items-center gap-2 text-2xl font-semibold text-text">
               <UserCheck size={20} className="text-accent" aria-hidden />
@@ -288,21 +297,23 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
-      <Section className="!pt-0">
-        <h2 className="text-2xl font-semibold text-text">Results</h2>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-          {caseStudy.outcomes.map((outcome) => (
-            <li key={outcome} className="flex gap-3 text-base text-muted">
-              <CheckCircle2
-                size={18}
-                className="mt-0.5 shrink-0 text-accent"
-                aria-hidden
-              />
-              {outcome}
-            </li>
-          ))}
-        </ul>
-      </Section>
+      {caseStudy.outcomes.length > 0 && (
+        <Section className="!pt-0">
+          <h2 className="text-2xl font-semibold text-text">Results</h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {caseStudy.outcomes.map((outcome) => (
+              <li key={outcome} className="flex gap-3 text-base text-muted">
+                <CheckCircle2
+                  size={18}
+                  className="mt-0.5 shrink-0 text-accent"
+                  aria-hidden
+                />
+                {outcome}
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
 
       {caseStudy.gallery.length > 0 && (
         <Section className="!pt-0">

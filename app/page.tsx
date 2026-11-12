@@ -7,7 +7,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ProjectMarquee } from "@/components/ProjectMarquee";
 import { site, hero, whatIDo, about } from "@/data/site";
 import { projectLinks, getFeaturedCaseStudies } from "@/data/caseStudies";
-import { services } from "@/data/services";
+import { serviceSections } from "@/data/services";
 import { personJsonLd } from "@/lib/seo";
 
 const whatIDoIcons = [Users, Search, TrendingUp];
@@ -174,8 +174,8 @@ export default function Home() {
           Services
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} variant="compact" />
+          {serviceSections.map((service) => (
+            <ServiceCard key={service.id} service={service} />
           ))}
         </div>
         <div className="mt-8">

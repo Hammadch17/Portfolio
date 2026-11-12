@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Work | Hammad Ahmad",
-  description: "Five client projects I managed from the first conversation to delivery.",
+  description: "Six client projects I managed from the first conversation to delivery.",
   path: "/work",
 });
 
@@ -21,7 +21,7 @@ export default function WorkPage() {
           Work
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted">
-          Five client projects I managed from the first conversation to
+          Six client projects I managed from the first conversation to
           delivery.
         </p>
 

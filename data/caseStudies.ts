@@ -3,6 +3,7 @@ export type CaseStudy = {
   title: string;
   subtitle: string;
   industry: string;
+  location?: string;
   timeline: string;
   role: string;
   roleTags: string[];
@@ -10,7 +11,7 @@ export type CaseStudy = {
   /** One line shown on the Work page card. */
   cardResult: string;
   overview: string;
-  challenge: string[];
+  challenge?: string[];
   myRole: string[];
   solution: { title: string; text: string }[];
   stats: { value: string; label: string }[];
@@ -506,6 +507,66 @@ export const caseStudies: CaseStudy[] = [
     featured: false,
     order: 5,
   },
+  {
+    slug: "jades-spa",
+    title: "Jade's Spa",
+    subtitle: "Single-page website for a beauty salon and spa",
+    industry: "Beauty and wellness",
+    location: "Lahore, Pakistan",
+    timeline: "November 2026",
+    role: "Business Development, Client Management and Requirements Gathering",
+    roleTags: [
+      "Business Development",
+      "Client Management",
+      "Requirements Gathering",
+    ],
+    liveUrl: "https://www.jadesspa.com/",
+    cardResult: "Slow down. You're in good hands.",
+    overview:
+      "Jade's Spa is a beauty salon and spa in Lahore offering massage, skin, hair and nail services in private treatment rooms. Deep Dev Solutions built a single-page website that presents the six services and sends each booking to WhatsApp.",
+    myRole: [
+      "Brought the client in through my own network.",
+      "Gathered requirements and agreed the scope with the client.",
+      "Managed the client relationship from the first conversation through delivery.",
+    ],
+    solution: [
+      {
+        title: "WhatsApp booking per service",
+        text: "Six service cards, each linking to a WhatsApp booking with the treatment name filled in.",
+      },
+      {
+        title: "Private treatment rooms",
+        text: "Private treatment rooms, soothing oils and clean linen are stated up front.",
+      },
+      {
+        title: "About and Visit sections",
+        text: "A clear About section and a visit section with WhatsApp, phone and email options.",
+      },
+    ],
+    stats: [],
+    outcomes: [],
+    services: [
+      "Website development",
+      "Single-page website",
+      "WhatsApp booking integration",
+      "Client management",
+    ],
+    cover: "/work/jades-spa/desktop-1.webp",
+    gallery: [
+      {
+        src: "/work/jades-spa/desktop-1.webp",
+        alt: "Jade's Spa home page on desktop",
+        kind: "desktop",
+      },
+      {
+        src: "/work/jades-spa/mobile-1.webp",
+        alt: "Jade's Spa home page on mobile",
+        kind: "mobile",
+      },
+    ],
+    featured: false,
+    order: 6,
+  },
 ];
 
 export type ProjectLink = {
@@ -564,6 +625,12 @@ export const projectLinks: ProjectLink[] = [
     title: "Free Hindi Audiobooks",
     industry: "Audiobooks",
     liveUrl: "https://freehindiaudiobooks.com",
+  },
+  {
+    slug: "jades-spa",
+    title: "Jade's Spa",
+    industry: "Beauty and wellness",
+    liveUrl: "https://www.jadesspa.com/",
   },
 ];
 

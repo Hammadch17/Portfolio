@@ -7,7 +7,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <Link
       href={`/work/${caseStudy.slug}`}
-      className="group block overflow-hidden rounded-xl border border-border bg-surface transition-all duration-150 ease-out hover:border-accent hover:-translate-y-0.5"
+      className="hover-card group block rounded-xl border border-border bg-surface"
     >
       <div className="overflow-hidden rounded-t-xl border-b border-border bg-bg">
         <div className="flex items-center gap-1.5 px-3 py-2">
@@ -26,7 +26,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
           />
         </div>
       </div>
-      <div className="p-6">
+      <div className="rounded-b-xl p-6">
         <p className="text-sm text-muted">{caseStudy.industry}</p>
         <h3 className="mt-2 text-xl font-semibold text-text">
           {caseStudy.title}

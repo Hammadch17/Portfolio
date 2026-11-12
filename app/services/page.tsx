@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Lightbulb, Users, ShieldCheck, Handshake } from "lucide-react";
+import { Code2, Search, Layers, Check } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
-import { ServiceCard } from "@/components/ServiceCard";
+import { RelevantProjectCard } from "@/components/RelevantProjectCard";
+import { Faq } from "@/components/Faq";
 import {
   servicesHero,
-  services,
-  whyWorkWithMe,
+  quickJumpLinks,
+  serviceSections,
+  trustBar,
+  servicesFaq,
   servicesClosingCta,
 } from "@/data/services";
 import { buildMetadata } from "@/lib/seo";
 
-const whyIcons = [Lightbulb, Users, ShieldCheck, Handshake];
+const icons = { Code2, Search, Layers };
 
 export const metadata: Metadata = buildMetadata({
   title: "Services | Hammad Ahmad",
@@ -42,32 +45,118 @@ export default function ServicesPage() {
             See my work
           </Link>
         </div>
-      </Section>
 
-      <Section className="pt-0">
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+        <div className="mt-10 flex flex-wrap gap-3">
+          {quickJumpLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="rounded-full border border-border px-4 py-2 text-sm font-medium text-text transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
+            >
+              {link.label}
+            </a>
           ))}
         </div>
       </Section>
 
+      {serviceSections.map((service) => {
+        const Icon = icons[service.icon];
+        return (
+          <Section
+            key={service.id}
+            id={service.id}
+            className="scroll-mt-28 border-t border-border"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-surface">
+              <Icon size={22} className="text-accent" aria-hidden />
+            </div>
+            <h2 className="mt-5 font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
+              {service.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-muted">
+              {service.promise}
+            </p>
+
+            <div className="mt-10 grid gap-10 md:grid-cols-2">
+              <div>
+                <h3 className="text-lg font-semibold text-text">
+                  What I do
+                </h3>
+                <p className="mt-3 text-base text-muted">{service.whatIDo}</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-text">
+                  How it gets built
+                </h3>
+                <ul className="mt-3 space-y-3">
+                  {service.howItGetsBuilt.map((point) => (
+                    <li
+                      key={point}
+                      className="flex gap-3 text-base text-muted"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <h3 className="text-lg font-semibold text-text">
+                What clients get
+              </h3>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {service.whatClientsGet.map((point) => (
+                  <li key={point} className="flex gap-2.5 text-base text-muted">
+                    <Check
+                      size={16}
+                      className="mt-0.5 shrink-0 text-accent"
+                      aria-hidden
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-10">
+              <h3 className="text-lg font-semibold text-text">
+                Relevant projects
+              </h3>
+              <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {service.relevantProjects.map((project) => (
+                  <RelevantProjectCard
+                    key={project.slug ?? project.title}
+                    project={project}
+                  />
+                ))}
+              </div>
+            </div>
+          </Section>
+        );
+      })}
+
       <Section className="border-t border-border">
         <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
-          Why work with me
+          {trustBar.heading}
         </h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {whyWorkWithMe.map((point, i) => {
-            const Icon = whyIcons[i];
-            return (
-              <div key={point} className="flex flex-col items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-bg">
-                  <Icon size={20} className="text-accent" aria-hidden />
-                </div>
-                <p className="text-base text-muted">{point}</p>
-              </div>
-            );
-          })}
+        <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+          {trustBar.clients.map((client) => (
+            <li key={client} className="text-base text-text">
+              {client}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-sm text-muted">{trustBar.industriesLine}</p>
+      </Section>
+
+      <Section className="border-t border-border">
+        <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-semibold text-text">
+          Frequently asked questions
+        </h2>
+        <div className="mt-8 max-w-2xl">
+          <Faq items={servicesFaq} />
         </div>
       </Section>
 
