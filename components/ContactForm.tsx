@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { contactFormSchema } from "@/lib/validators";
 import { site } from "@/data/site";
+import { Button } from "@/components/Button";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -82,7 +83,7 @@ export function ContactForm() {
           required
           aria-describedby={errors.name ? "name-error" : undefined}
           aria-invalid={Boolean(errors.name)}
-          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
+          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text transition-colors duration-150 ease-out focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/40"
         />
         {errors.name && (
           <p id="name-error" className="mt-1 text-sm text-red-400">
@@ -102,7 +103,7 @@ export function ContactForm() {
           required
           aria-describedby={errors.email ? "email-error" : undefined}
           aria-invalid={Boolean(errors.email)}
-          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
+          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text transition-colors duration-150 ease-out focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/40"
         />
         {errors.email && (
           <p id="email-error" className="mt-1 text-sm text-red-400">
@@ -124,7 +125,7 @@ export function ContactForm() {
           type="text"
           aria-describedby={errors.company ? "company-error" : undefined}
           aria-invalid={Boolean(errors.company)}
-          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
+          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text transition-colors duration-150 ease-out focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/40"
         />
         {errors.company && (
           <p id="company-error" className="mt-1 text-sm text-red-400">
@@ -149,7 +150,7 @@ export function ContactForm() {
           rows={6}
           aria-describedby={errors.message ? "message-error" : undefined}
           aria-invalid={Boolean(errors.message)}
-          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text"
+          className="mt-2 w-full rounded-[10px] border border-border bg-surface px-4 py-3 text-base text-text transition-colors duration-150 ease-out focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/40"
         />
         {errors.message && (
           <p id="message-error" className="mt-1 text-sm text-red-400">
@@ -169,13 +170,13 @@ export function ContactForm() {
         />
       </div>
 
-      <button
+      <Button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3.5 text-base font-semibold text-accent-text transition-colors duration-150 ease-out hover:bg-white hover:text-bg disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full justify-center"
       >
         {status === "submitting" ? "Sending" : "Send message"}
-      </button>
+      </Button>
 
       {status === "error" && (
         <p role="alert" className="text-sm text-red-400">
