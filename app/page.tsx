@@ -51,7 +51,7 @@ export default function Home() {
               {hero.subhead}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact#book" withArrow>
+              <Button href="/contact#message" withArrow>
                 Book a 20 minute call
               </Button>
               <Button href="/work" variant="secondary">
@@ -249,7 +249,7 @@ export default function Home() {
             Book a 20 minute call and tell me what you are working on.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="/contact#book" withArrow>Book a call</Button>
+            <Button href="/contact#message" withArrow>Book a call</Button>
           </div>
         </div>
       </Section>

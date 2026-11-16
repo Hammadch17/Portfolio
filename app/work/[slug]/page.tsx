@@ -393,7 +393,7 @@ export default async function CaseStudyPage({
             Want to talk about your project?
           </h2>
           <div className="mt-8 flex justify-center">
-            <Button href="/contact#book" withArrow>Book a call</Button>
+            <Button href="/contact#message" withArrow>Book a call</Button>
           </div>
         </div>
       </Section>

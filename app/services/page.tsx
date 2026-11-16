@@ -35,7 +35,7 @@ export default function ServicesPage() {
           {servicesHero.subtitle}
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href="/contact#book" withArrow>
+          <Button href="/contact#message" withArrow>
             Book a call
           </Button>
           <Link
@@ -167,7 +167,7 @@ export default function ServicesPage() {
           </h2>
           <p className="mt-4 text-lg text-muted">{servicesClosingCta.text}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-            <Button href="/contact#book" withArrow>
+            <Button href="/contact#message" withArrow>
               Book a call
             </Button>
             <Link

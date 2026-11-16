@@ -62,11 +62,11 @@ export function Header() {
               </Link>
             );
           })}
-          <Button href="/contact#book">Book a call</Button>
+          <Button href="/contact#message">Book a call</Button>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <Button href="/contact#book" className="px-4 py-2 text-sm">
+          <Button href="/contact#message" className="px-4 py-2 text-sm">
             Book a call
           </Button>
           <button

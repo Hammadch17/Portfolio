@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MessageCircle } from "lucide-react";
 import { Section } from "@/components/Section";
-import { CalEmbed } from "@/components/CalEmbed";
 import { ContactForm } from "@/components/ContactForm";
-import { LinkedInIcon, GitHubIcon } from "@/components/SocialIcons";
+import { LinkedInIcon } from "@/components/SocialIcons";
 import { site, about } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -33,16 +32,6 @@ const contactRows = [
     href: site.linkedinUrl,
     external: true,
   },
-  ...(site.showGithub
-    ? [
-        {
-          icon: GitHubIcon,
-          label: "GitHub",
-          href: site.githubUrl,
-          external: true,
-        },
-      ]
-    : []),
 ];
 
 export default function ContactPage() {
@@ -117,7 +106,10 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-8">
+          <div
+            id="message"
+            className="scroll-mt-28 rounded-2xl border border-border bg-surface p-8"
+          >
             <h2 className="text-2xl font-semibold text-text">
               Send a message
             </h2>
@@ -125,12 +117,6 @@ export default function ContactPage() {
               <ContactForm />
             </div>
           </div>
-        </div>
-      </Section>
-
-      <Section id="book" className="pt-0">
-        <div className="rounded-2xl border border-border bg-surface p-8">
-          <CalEmbed />
         </div>
       </Section>
     </>

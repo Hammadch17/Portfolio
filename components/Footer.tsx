@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site } from "@/data/site";
 import { Button } from "@/components/Button";
-import { LinkedInIcon, GitHubIcon } from "@/components/SocialIcons";
+import { LinkedInIcon } from "@/components/SocialIcons";
 
 const sitemapLinks = [
   { href: "/about", label: "About" },
@@ -37,17 +37,6 @@ export function Footer() {
               >
                 <LinkedInIcon />
               </a>
-              {site.showGithub && (
-                <a
-                  href={site.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Hammad Ahmad on GitHub"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-text transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
-                >
-                  <GitHubIcon />
-                </a>
-              )}
             </div>
           </div>
 
@@ -80,7 +69,7 @@ export function Footer() {
               working on.
             </p>
             <div className="mt-5">
-              <Button href="/contact#book" withArrow>
+              <Button href="/contact#message" withArrow>
                 Book a call
               </Button>
             </div>
